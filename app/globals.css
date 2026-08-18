@@ -284,7 +284,8 @@ img { display: block; max-width: 100%; }
 .hint-card__plus { color: #a58d81; font-family: var(--sans); font-size: 1.25rem; }
 .hint-card strong { margin-top: 23px; font-size: 1.2rem; font-weight: 400; }
 .hint-card__answer { display: block; max-height: 0; overflow: hidden; opacity: 0; margin-top: 0; color: #6f5950; line-height: 1.55; transition: max-height .45s ease, opacity .35s ease, margin .35s ease; }
-.hint-card--open { cursor: default; }
+.hint-card--open,
+.hint-card--open:disabled { cursor: default; color: inherit; opacity: 1; }
 .hint-card--open .hint-card__answer { max-height: 140px; opacity: 1; margin-top: 10px; }
 .hint-card__tap { margin-top: auto; padding-top: 12px; color: #ac9285; font-family: var(--sans); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; }
 

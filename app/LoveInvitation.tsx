@@ -199,6 +199,7 @@ export default function LoveInvitation() {
                   key={hint.title}
                   onClick={() => openHint(index)}
                   aria-expanded={isOpen}
+                  disabled={isOpen}
                   data-reveal
                 >
                   <span className="hint-card__top">
