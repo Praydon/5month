@@ -77,10 +77,8 @@ export default function LoveInvitation() {
     }, 950);
   };
 
-  const toggleHint = (index: number) => {
-    setOpenedHints((current) => current.includes(index)
-      ? current.filter((item) => item !== index)
-      : [...current, index]);
+  const openHint = (index: number) => {
+    setOpenedHints((current) => current.includes(index) ? current : [...current, index]);
   };
 
   return (
@@ -199,13 +197,13 @@ export default function LoveInvitation() {
                   className={`hint-card ${isOpen ? "hint-card--open" : ""}`}
                   type="button"
                   key={hint.title}
-                  onClick={() => toggleHint(index)}
+                  onClick={() => openHint(index)}
                   aria-expanded={isOpen}
                   data-reveal
                 >
                   <span className="hint-card__top">
                     <span className="hint-card__icon" aria-hidden="true">{hint.icon}</span>
-                    <span className="hint-card__plus" aria-hidden="true">{isOpen ? "×" : "+"}</span>
+                    <span className="hint-card__plus" aria-hidden="true">{isOpen ? "✓" : "+"}</span>
                   </span>
                   <strong>{hint.title}</strong>
                   <span className="hint-card__answer">{hint.text}</span>
@@ -249,19 +247,6 @@ export default function LoveInvitation() {
             <p className="handwritten letter__signature">{content.signature}</p>
           </div>
         </section>
-
-        {content.ai.enabled && (
-          <section className="section imagined" aria-labelledby="imagined-title">
-            <div className="section-heading" data-reveal>
-              <p className="eyebrow">как на открытке</p>
-              <h2 id="imagined-title" className="display">Немного нас в другой вселенной</h2>
-            </div>
-            <figure className="imagined__card" data-reveal>
-              <img src={content.ai.image} alt={content.ai.alt} width="1792" height="936" loading="lazy" />
-              <figcaption className="handwritten">как в нашем добром кино...</figcaption>
-            </figure>
-          </section>
-        )}
 
         <section className="finale" aria-labelledby="finale-title">
           <img className="finale__photo" src="/photos/gallery-6.JPG" alt="Счастливая пара улыбается в золотом свете" width="1600" height="900" loading="lazy" />

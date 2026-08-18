@@ -283,8 +283,9 @@ img { display: block; max-width: 100%; }
 .hint-card__icon { color: var(--burgundy); font-size: 1.2rem; }
 .hint-card__plus { color: #a58d81; font-family: var(--sans); font-size: 1.25rem; }
 .hint-card strong { margin-top: 23px; font-size: 1.2rem; font-weight: 400; }
-.hint-card__answer { display: grid; grid-template-rows: 0fr; overflow: hidden; opacity: 0; margin-top: 0; color: #6f5950; line-height: 1.55; transition: grid-template-rows .35s ease, opacity .35s ease, margin .35s ease; }
-.hint-card--open .hint-card__answer { grid-template-rows: 1fr; opacity: 1; margin-top: 10px; }
+.hint-card__answer { display: block; max-height: 0; overflow: hidden; opacity: 0; margin-top: 0; color: #6f5950; line-height: 1.55; transition: max-height .45s ease, opacity .35s ease, margin .35s ease; }
+.hint-card--open { cursor: default; }
+.hint-card--open .hint-card__answer { max-height: 140px; opacity: 1; margin-top: 10px; }
 .hint-card__tap { margin-top: auto; padding-top: 12px; color: #ac9285; font-family: var(--sans); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; }
 
 .secret-section { padding: 25px 18px clamp(90px, 20vw, 150px); background: #f4ece1; }
@@ -314,12 +315,6 @@ img { display: block; max-width: 100%; }
 .detail em { color: var(--burgundy); font-family: "Futura Script", cursive; font-size: 1.15rem; font-style: normal; }
 .letter__closing { margin: 31px 0 0; text-align: center; line-height: 1.6; }
 .letter__signature { margin: 8px 0 0; color: var(--burgundy); font-size: 1.8rem; text-align: center; }
-
-.imagined { background: var(--ivory); }
-.imagined .section-heading h2 { max-width: 10ch; margin-inline: auto; }
-.imagined__card { position: relative; width: min(100%, 940px); margin: 0 auto; padding: 8px 8px 46px; transform: rotate(-.7deg); background: #fffaf1; box-shadow: 0 20px 50px rgba(73, 47, 38, .15); }
-.imagined__card img { width: 100%; aspect-ratio: 1.91 / 1; object-fit: cover; }
-.imagined__card figcaption { position: absolute; right: 24px; bottom: 10px; color: var(--burgundy); font-size: clamp(1.2rem, 5vw, 1.7rem); }
 
 .finale { position: relative; min-height: 100svh; display: grid; place-items: center; overflow: hidden; padding: max(70px, env(safe-area-inset-top)) 20px max(70px, env(safe-area-inset-bottom)); color: #fff9f2; text-align: center; background: #27130f; }
 .finale__photo, .finale__shade { position: absolute; inset: 0; width: 100%; height: 100%; }
