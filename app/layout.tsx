@@ -19,13 +19,19 @@ export async function generateMetadata(): Promise<Metadata> {
       description,
       type: "website",
       locale: "ru_RU",
-      images: [{ url: `${origin}/og.png`, width: 1792, height: 936, alt: "5 месяцев вместе — романтическая открытка" }],
+      images: [{
+        url: `${origin}/og.jpg`,
+        width: 1200,
+        height: 630,
+        type: "image/jpeg",
+        alt: "5 месяцев вместе — романтическая открытка",
+      }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [`${origin}/og.png`],
+      images: [`${origin}/og.jpg`],
     },
   };
 }
